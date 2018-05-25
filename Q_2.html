@@ -1,0 +1,9 @@
+<title>RandomGeneration</title>
+<p id="rando"></p>
+<button onclick="random()">click</button>
+<script>
+     function random(){
+        var rando = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        document.getElementById('rando').innerHTML += rando + "<br>"; 
+     }
+ </script>

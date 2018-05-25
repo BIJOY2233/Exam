@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SELECTION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    
+    <input type="checkbox" class="cb" name="check[]"> CRICKET <br>
+    <input type="checkbox" class="cb" name="check[]"> FOOTBALL <br>
+    <input type="checkbox" class="cb" name="check[]"> HOCKEY<br>
+    <input type="checkbox" class="cb" name="check[]"> KABADI<br>
+    <input type="checkbox" id="all"/> Select All <br>
+ 
+    <script>
+        $("#all").change
+        (
+            function()
+            { 
+                var status = this.checked; 
+                $('.cb').each
+                (
+                    function()
+                    {
+                        this.checked = status;         
+                    }
+                );
+            }
+        );
+
+        $('.cb').change
+        (
+            function()
+            {   
+                if(this.checked == false)
+                { 
+                    $("#all")[0].checked = false;
+                }
+                if ($('.cb:checked').length == $('.cb').length )
+                { 
+                    $("#all")[0].checked = true;
+                }
+            }
+        );
+    </script>
+</body>
+</html>
